@@ -1,7 +1,7 @@
 {
   "name": "movie-microapp",
-  "version": "0.0.1",
-  "description": "Example movie micro-app using ONEm Framework",
+  "version": "0.0.2",
+  "description": "Example movie micro-app using ONEm Framework - Part 2",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,6 +24,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jwt-simple": "^0.5.6",
+    "morgan": "^1.9.1",
     "onemsdk": "^0.16.0",
     "request-promise": "^4.2.5",
     "url-join": "^4.0.1"
