@@ -20,7 +20,7 @@ api.get('/', async (req, res) => {
         let response = Response.fromTag(rootTag)
         res.json(response.toJSON())
     } catch (e) {
-    //    console.log(e)
+        console.log(e)
         res.status(500).json({ success: false, message: 'server error' })
     }
 })
