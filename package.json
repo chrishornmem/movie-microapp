@@ -24,6 +24,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jwt-simple": "^0.5.6",
+    "mongoose": "^5.9.5",
     "morgan": "^1.9.1",
     "onemsdk": "^0.16.0",
     "request-promise": "^4.2.5",
