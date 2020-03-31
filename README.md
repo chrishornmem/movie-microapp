@@ -26,6 +26,7 @@ $ npm install
 ```
 PORT=3000
 READ_ACCESS_TOKEN=<themoviedb API Read Access Token (v4 auth)>
+TOKEN_SECRET=<any random string>
 ```
 
 2. If you're running locally, then use [ngrok](https://www.ngrok.com) to give you a publicly accessible url to your Micro-app at ```localhost:3000```
@@ -36,7 +37,10 @@ $ ngrok http 3000
 
 Make a note of the link, eg ```https://6f1ca7d4.ngrok.io```
 
-3. In the ONEm Developer Portal, select "Create App" and set the *callback path* to your app appending ```/api``` to the base path, eg: ```https://6f1ca7d4.ngrok.io/api```
+3. In the ONEm Developer Portal, select "Create App" and set:
+
+*  *callback path* to your app ```<basepath>/api```, eg: ```https://6f1ca7d4.ngrok.io/api```
+*  *token secret* to the value of TOKEN_SECRET from ```.env```
 
 4. In the ONEm Developer Portal, select your new app and then select ```Web channel```.  Copy/paste the code into the ```body``` section of the ```/public/index.html``` of your Micro-app
 
@@ -51,5 +55,3 @@ In your browser, visit ```localhost:3000``` (or where ever your app is configure
 The ONEm Micro-app should be visible in bottom right-hand corner.  Click the icon to open.
 
 More details at https://developer-docs.onem.zone
-
-
