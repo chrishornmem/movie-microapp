@@ -1,3 +1,4 @@
+const jwt = require('jwt-simple')
 const express = require('express')
 
 const { loadTemplate } = require('onemsdk').parser
@@ -13,6 +14,26 @@ const views = {
     VIEW_MOVIE: `${VIEWS_PATH}movieView.pug`,
     VIEW_MOVIE_LIST: `${VIEWS_PATH}movieList.pug`,
 }
+
+/*
+ * Middleware to grab user
+ */
+function getUser(req, res, next) {
+    if (!req.header('Authorization')) {
+        console.log("missing header")
+        return res.status(401).send({ message: 'Unauthorized request' })
+    }
+    const token = req.header('Authorization').split(' ')[1]
+    const payload = jwt.decode(token, process.env.TOKEN_SECRET)
+
+    if (!payload) {
+        return res.status(401).send({ message: 'Unauthorized Request' })
+    }
+    req.user = payload.sub
+    next()
+}
+
+api.use(getUser)
 
 api.get('/', async (req, res) => {
     try {
