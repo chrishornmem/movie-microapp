@@ -25,7 +25,7 @@ function getUser(req, res, next) {
         return res.status(401).send({ message: 'Unauthorized request' })
     }
     const token = req.header('Authorization').split(' ')[1]
-    const payload = jwt.decode(token, '', true)
+    const payload = jwt.decode(token, process.env.TOKEN_SECRET)
 
     if (!payload) {
         return res.status(401).send({ message: 'Unauthorized Request' })
