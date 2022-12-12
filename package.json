@@ -22,7 +22,7 @@
   "homepage": "https://github.com/chrishornmem/movie-microapp#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jwt-simple": "^0.5.6",
     "onemsdk": "^0.16.0",
     "request-promise": "^4.2.5",
